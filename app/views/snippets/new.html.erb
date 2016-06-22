@@ -1,0 +1,10 @@
+<h1>Create new snippet</h1>
+<%= @snippet.errors.full_messages.join(",") %>
+<%= form_for @snippet do |f| %>
+  <p>Category <%= f.collection_select :category_id, Category.all, :id, :name %></p>
+  <%= f.label :title %>
+  <%= f.text_field :title %><br>
+  <%= f.label :work %>
+  <%= f.text_area :work %><br>
+  <%= f.submit %>
+<% end %>
