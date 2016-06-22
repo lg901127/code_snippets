@@ -1,6 +1,7 @@
 <h1>Programming Languages</h1>
 <% @categories.each do |category| %>
   <%= link_to category.name, category_path(category) %>
+  <%= "#{category.snippets.count} Snippets" %>
   <%#= category.name %>
   <hr>
 <% end %>
