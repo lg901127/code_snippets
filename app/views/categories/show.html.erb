@@ -1,0 +1,5 @@
+<h1><%= @category.name %> Snippets</h1>
+<% @category.snippets.each do |snippet| %>
+  <%= snippet.title %>
+  <hr>
+<% end %>
