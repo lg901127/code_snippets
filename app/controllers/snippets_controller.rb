@@ -19,4 +19,10 @@ class SnippetsController < ApplicationController
       render :new
     end
   end
+
+  def snippet_language(snippet)
+    c = Category.find snippet.category_id
+    :"#{c.name}"
+  end
+  helper_method :snippet_language
 end

@@ -1,2 +1,3 @@
 <h1><%= @snippet.title %></h1>
-<p><%= @snippet.work %></h1>
+
+<%= CodeRay.scan(@snippet.work, snippet_language(@snippet)).div(:line_numbers => :table).html_safe %>
