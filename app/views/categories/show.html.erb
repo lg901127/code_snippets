@@ -1,5 +1,13 @@
 <h1><%= @category.name %> Snippets</h1>
 <% @category.snippets.each do |snippet| %>
-  <%= link_to snippet.title, snippet_path(snippet) %>
+  <% if snippet.private == 0 %>
+    <%= link_to snippet.title, snippet_path(snippet) %>
+  <% else %>
+    <% if snippet.user == current_user %>
+      <%= link_to snippet.title, snippet_path(snippet) %>
+    <% else %>
+      <%= "#{snippet.title}      *PRIVATE*" %>
+    <% end %>
+  <% end %>
   <hr>
 <% end %>

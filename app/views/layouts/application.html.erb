@@ -11,6 +11,14 @@
     <%= link_to("home", root_path) %>
     |
     <%= link_to "Create new snippet", new_snippet_path %>
+    |
+    <% if user_signed_in? %>
+      <%= link_to "Hello #{current_user.first_name}", edit_user_path(session[:user_id]) %>
+      <%= link_to "Sign out", sessions_path, method: :delete %>
+    <% else %>
+      <%= link_to "Create New User", new_user_path %>
+      <%= link_to "Sign in", new_session_path %>
+    <% end %>
 </nav>
 <hr>
 <%= yield %>
