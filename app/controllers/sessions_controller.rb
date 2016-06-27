@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       redirect_to root_path, notice: "Logged in!"
     else
       flash[:alert] = "Wrong credentials"
-      @user.increment_login_lockout_count
+      # @user.increment_login_lockout_count
       render :new
     end
   end

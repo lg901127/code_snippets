@@ -2,7 +2,7 @@ class SnippetsController < ApplicationController
   def show
     @snippet = Snippet.find params[:id]
     if @snippet.user != current_user && @snippet.private == 1
-      render :false
+      render :alert
     end
   end
 
@@ -15,7 +15,7 @@ class SnippetsController < ApplicationController
     @snippet = Snippet.new snippet_params
     @snippet.user = current_user
     if @snippet.save
-      redirect_to category_path(@snippet.category_id), notice: "Snippet created!"
+      redirect_to snippet_path(@snippet), notice: "Snippet created!"
     else
       render :new
     end
