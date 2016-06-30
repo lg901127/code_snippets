@@ -1,13 +1,14 @@
 <h1><%= @category.name %> Snippets</h1>
+<div class="list-group">
 <% @category.snippets.each do |snippet| %>
   <% if snippet.private == 0 %>
-    <%= link_to snippet.title, snippet_path(snippet) %>
+    <div class="list-group-item col-lg-2 col-md-3 col-sm-4 col-xs-12"><%= link_to snippet.title, snippet_path(snippet) %></div>
   <% else %>
     <% if snippet.user == current_user %>
-      <%= link_to snippet.title, snippet_path(snippet) %>
+      <div class="list-group-item col-lg-2 col-md-3 col-sm-4 col-xs-12"><%= link_to snippet.title, snippet_path(snippet) %></div>
     <% else %>
-      <%= "#{snippet.title}      *PRIVATE*" %>
+      <div class="list-group-item col-lg-2 col-md-3 col-sm-4 col-xs-12"><%= "#{snippet.title}      *PRIVATE*" %></div>
     <% end %>
   <% end %>
-  <hr>
 <% end %>
+</div>

@@ -1,7 +1,7 @@
 <h1>Programming Languages</h1>
+<div class="list-group">
 <% @categories.each do |category| %>
-  <%= link_to category.name, category_path(category) %>
-  <%= "#{category.snippets.count} Snippets" %>
-  <%#= category.name %>
-  <hr>
+  <div class="list-group-item col-lg-2 col-md-3 col-sm-4 col-xs-12 btn btn-danger"><%= link_to category.name, category_path(category) %>
+  <%= "#{category.snippets.count} Snippets" %></div>
 <% end %>
+</div>

@@ -38,6 +38,10 @@ gem 'hirb'
 gem 'will_paginate'
 gem 'coderay'
 gem 'redcarpet'
+gem 'bootstrap-sass'
+gem 'bootstrap-glyphicons'
+gem 'jquery-rails'
+gem 'bootstrap_form'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

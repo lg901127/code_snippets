@@ -1,12 +1,15 @@
-<h1>Create new snippet</h1>
-<%= @snippet.errors.full_messages.join(",") %>
-<%= form_for @snippet do |f| %>
-  <p>Category <%= f.collection_select :category_id, Category.all, :id, :name %></p>
-  <%= f.label :title %>
-  <%= f.text_field :title %><br>
-  <%= f.label :work %>
-  <%= f.text_area :work %><br>
-  <%= f.check_box :private %>
-  <%= f.label :private %>
-  <%= f.submit %>
-<% end %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h1>Create new snippet</h1>
+    <%= @snippet.errors.full_messages.join(",") %>
+  </div>
+  <%= bootstrap_form_for @snippet do |f| %>
+    <div class="col-md-6 col-md-offset-3">
+      <%= f.collection_select :category_id, Category.all, :id, :name %>
+      <%= f.text_field :title %>
+      <%= f.text_area :work %>
+      <%= f.check_box :private, class: "btn btn-primary" %>
+      <%= f.submit class: "btn btn-warning" %>
+    </div>
+  <% end %>
+</div>
