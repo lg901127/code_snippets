@@ -1,4 +1,5 @@
 class SnippetsController < ApplicationController
+  before_action :authenticate_user!
   def show
     @snippet = Snippet.find params[:id]
     if @snippet.user != current_user && @snippet.private == 1
