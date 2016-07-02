@@ -4,6 +4,7 @@
   <title>CodeSnippets</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -16,6 +17,7 @@
   </button>
   <div id="navbar" class="navbar-collapse collapse">
     <ul class="nav navbar-nav">
+      <li class="navbar-brand" style="font-family: 'Kaushan Script', cursive; font-size: 20px;">Code Snippet</li>
       <li><%= link_to("home", root_path) %></li>
       <li><%= link_to "Create new snippet", new_snippet_path %></li>
     </ul>

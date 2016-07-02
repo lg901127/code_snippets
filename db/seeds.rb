@@ -1,4 +1,4 @@
-["Ruby", "JavaScript", "HTML", "CSS"].each do |cat|
+["Ruby", "Javascript", "HTML", "CSS", "c++", "Java", "Python"].each do |cat|
   Category.create name: cat
 end
 # 50.times do
